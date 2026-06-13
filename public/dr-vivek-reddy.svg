@@ -1,0 +1,21 @@
+<svg width="720" height="820" viewBox="0 0 720 820" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Dr. B. Hemareddy Vivek Reddy profile visual</title>
+  <desc id="desc">A premium doctor profile illustration for Sri Maatha Multispeciality Dental Hospital.</desc>
+  <rect width="720" height="820" rx="42" fill="#EAF4F8"/>
+  <circle cx="610" cy="112" r="148" fill="#FDF8EF"/>
+  <circle cx="142" cy="698" r="184" fill="#DDEEF4"/>
+  <rect x="108" y="152" width="504" height="574" rx="46" fill="white" stroke="#E3EAF0" stroke-width="3"/>
+  <circle cx="360" cy="284" r="94" fill="#C9A45C"/>
+  <circle cx="360" cy="263" r="76" fill="#F4C7A1"/>
+  <path d="M258 542C258 443 302 386 360 386C418 386 462 443 462 542V628H258V542Z" fill="#0B1F3A"/>
+  <path d="M216 706V552C216 491 265 442 326 442H394C455 442 504 491 504 552V706H216Z" fill="#FFFFFF" stroke="#E3EAF0" stroke-width="3"/>
+  <path d="M286 444L360 548L434 444" stroke="#E3EAF0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M336 548H384V706H336V548Z" fill="#EAF4F8"/>
+  <path d="M280 302C302 336 331 352 360 352C389 352 418 336 440 302" stroke="#102A4C" stroke-width="8" stroke-linecap="round"/>
+  <path d="M278 245C300 196 332 178 360 178C388 178 420 196 442 245C392 226 328 226 278 245Z" fill="#102A4C"/>
+  <rect x="420" y="590" width="54" height="12" rx="6" fill="#C9A45C"/>
+  <rect x="195" y="104" width="330" height="62" rx="31" fill="#0B1F3A"/>
+  <text x="360" y="143" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="white">Founder &amp; Chief Dentist</text>
+  <rect x="222" y="672" width="276" height="52" rx="26" fill="#102A4C"/>
+  <text x="360" y="706" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700" fill="white">Dr. Vivek Reddy</text>
+</svg>
