@@ -31,7 +31,7 @@ export function FAQ() {
           </div>
           <ButtonLink
             href={clinic.whatsappHref}
-            variant="whatsapp"
+            variant="secondary"
             className="mt-5 w-full sm:mt-0 sm:w-auto"
           >
             <MessageCircle aria-hidden="true" className="size-4" />
@@ -48,7 +48,7 @@ export function FAQ() {
             return (
               <article
                 key={faq.question}
-                className="overflow-hidden rounded-2xl border border-border-soft bg-white shadow-sm transition duration-300 hover:border-gold-500"
+                className="overflow-hidden rounded-2xl border border-border-soft bg-white shadow-sm transition duration-300 hover:border-navy-800"
               >
                 <button
                   id={buttonId}
@@ -56,13 +56,13 @@ export function FAQ() {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  className="flex w-full items-center justify-between gap-5 px-5 py-4 text-left text-base font-extrabold text-navy-950 sm:px-6"
+                  className="flex min-h-14 w-full cursor-pointer items-center justify-between gap-5 px-5 py-4 text-left text-base font-extrabold text-navy-950 transition active:bg-blue-50 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-navy-800 sm:px-6"
                 >
                   {faq.question}
                   <ChevronDown
                     aria-hidden="true"
                     className={cn(
-                        "size-5 shrink-0 text-gold-700 transition-transform",
+                        "size-5 shrink-0 text-navy-800 transition-transform",
                       isOpen && "rotate-180",
                     )}
                   />

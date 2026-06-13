@@ -10,9 +10,6 @@
   --color-slate-600: #5e6b7a;
   --color-slate-400: #8a96a3;
   --color-border-soft: #e3eaf0;
-  --color-gold-500: #c9a45c;
-  --color-gold-600: #b89145;
-  --color-gold-700: #7a5418;
   --color-teal-600: #2a9d8f;
   --color-teal-700: #21877b;
   --color-teal-800: #126b63;
@@ -25,7 +22,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: clip;
 }
 
@@ -40,8 +36,8 @@ body {
 }
 
 body::selection {
-  background: #c9a45c;
-  color: #0b1f3a;
+  background: #0b1f3a;
+  color: #ffffff;
 }
 
 a,
@@ -50,7 +46,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(201, 164, 92, 0.75);
+  outline: 3px solid rgba(11, 31, 58, 0.75);
   outline-offset: 4px;
 }
 

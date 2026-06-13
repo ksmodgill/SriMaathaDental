@@ -2,7 +2,6 @@ import {
   BadgeCheck,
   HeartPulse,
   Microscope,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import { MotionReveal } from "@/components/ui/MotionReveal";
@@ -33,12 +32,6 @@ const features = [
       "Planning is especially important for implants, root canal treatment, braces, aligners and cosmetic smile improvements.",
     icon: BadgeCheck,
   },
-  {
-    title: "Sterilization Standards",
-    description:
-      "A structured clinical environment supports safer and more organized care for every patient visit.",
-    icon: ShieldCheck,
-  },
 ];
 
 export function TechnologyFacilities() {
@@ -52,13 +45,13 @@ export function TechnologyFacilities() {
             description="Technology is valuable only when it helps the doctor explain the condition better and helps the patient make a calmer decision."
           />
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => {
               const Icon = feature.icon;
 
               return (
                 <MotionReveal key={feature.title} delay={index * 0.035}>
-                  <article className="group h-full rounded-[1.5rem] border border-border-soft bg-[#f8fbfd] p-5 transition duration-300 hover:-translate-y-1 hover:border-gold-500 hover:bg-white hover:shadow-2xl hover:shadow-navy-950/10">
+                  <article className="group h-full rounded-[1.5rem] border border-border-soft bg-[#f8fbfd] p-5 transition duration-300 hover:-translate-y-1 hover:border-navy-800 hover:bg-white hover:shadow-2xl hover:shadow-navy-950/10">
                     <div className="flex size-11 items-center justify-center rounded-2xl bg-white text-navy-950 shadow-sm transition group-hover:bg-navy-950 group-hover:text-white">
                       <Icon aria-hidden="true" className="size-5" />
                     </div>

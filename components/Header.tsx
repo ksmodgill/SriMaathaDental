@@ -1,21 +1,27 @@
+"use client";
+
 import { Clock, HeartPulse, Mail, MapPin, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { clinic, navItems } from "@/data/site";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { cn } from "@/lib/utils";
 
 export function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const desktopNavItems = [
     { label: "Home", href: "#hero" },
     ...navItems.filter(
       (item) => item.label !== "Why Choose Us" && item.label !== "FAQ",
     ),
   ];
+  const mobileNavItems = [{ label: "Home", href: "#hero" }, ...navItems];
 
   return (
     <header className="sticky top-0 z-[70] border-b border-border-soft/80 bg-white shadow-[0_18px_50px_rgba(11,31,58,0.08)]">
       <div className="container-premium flex min-h-20 items-center justify-between gap-5">
-        <Link href="#hero" className="group flex min-w-0 items-center gap-3">
+        <Link href="#hero" onClick={() => setIsMobileMenuOpen(false)} className="group flex min-w-0 items-center gap-3 rounded-2xl focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-navy-800">
           <Image
             src="/favicon.png"
             alt={`${clinic.name} logo`}
@@ -39,7 +45,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-sm font-bold text-slate-600 transition hover:bg-blue-50 hover:text-navy-950"
+              className="inline-flex min-h-11 items-center rounded-full px-4 py-2 text-sm font-bold text-slate-600 transition hover:bg-blue-50 hover:text-navy-950 active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-navy-800"
             >
               {item.label}
             </Link>
@@ -57,89 +63,118 @@ export function Header() {
           </ButtonLink>
         </div>
 
-        <input
-          id="mobile-nav-toggle"
-          type="checkbox"
-          className="peer sr-only lg:hidden"
-          aria-label="Toggle mobile menu"
-        />
-        <label
-          htmlFor="mobile-nav-toggle"
-          className="inline-flex size-12 cursor-pointer items-center justify-center rounded-full border border-border-soft bg-white text-navy-950 shadow-sm peer-checked:[&_.close-icon]:block peer-checked:[&_.menu-icon]:hidden lg:hidden"
+        <button
+          type="button"
+          aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMobileMenuOpen((value) => !value)}
+          className="inline-flex size-12 cursor-pointer items-center justify-center rounded-full border border-border-soft bg-white text-navy-950 shadow-sm transition active:scale-[0.96] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-navy-800 lg:hidden"
         >
-          <Menu aria-hidden="true" className="menu-icon size-5" />
-          <X aria-hidden="true" className="close-icon hidden size-5" />
-        </label>
+          {isMobileMenuOpen ? (
+            <X aria-hidden="true" className="size-5" />
+          ) : (
+            <Menu aria-hidden="true" className="size-5" />
+          )}
+        </button>
 
-        <div className="absolute inset-x-0 top-full hidden max-h-[calc(100svh-5rem)] overflow-y-auto border-t border-border-soft bg-white px-4 py-4 shadow-xl shadow-navy-950/8 peer-checked:block sm:px-6 lg:hidden">
-          <nav aria-label="Mobile navigation" className="pb-24">
-            <section>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-gold-700">
-                Menu
-              </p>
-              <div className="mt-3 grid gap-1">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-2xl bg-[#f8fbfd] px-4 py-3 text-sm font-extrabold text-navy-950 hover:bg-blue-50"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </section>
-
-            <div className="my-4 h-px bg-border-soft" />
-
-            <section>
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-gold-700">
-                  Clinic Contact
+        <div
+          id="mobile-navigation"
+          className={cn(
+            "absolute inset-x-0 top-full max-h-[calc(100svh-5rem)] overflow-hidden border-t border-border-soft bg-white shadow-xl shadow-navy-950/8 lg:hidden",
+            isMobileMenuOpen ? "block" : "hidden",
+          )}
+        >
+          <nav
+            aria-label="Mobile navigation"
+            className="flex max-h-[calc(100svh-5rem)] flex-col"
+          >
+            <div className="overflow-y-auto px-4 py-4 sm:px-6">
+              <section>
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-navy-800">
+                  Menu
                 </p>
-                <div className="mt-3 grid gap-3 text-sm leading-6 text-slate-600">
-                  <a
-                    href={clinic.phoneHref}
-                    className="flex items-center gap-3 font-bold text-navy-950"
-                  >
-                    <Phone aria-hidden="true" className="size-4 text-gold-700" />
-                    {clinic.phone}
-                  </a>
-                  <a
-                    href={clinic.emergencyHref}
-                    className="flex items-center gap-3 font-bold text-navy-950"
-                  >
-                    <HeartPulse aria-hidden="true" className="size-4 text-gold-700" />
-                    Emergency: {clinic.emergencyPhone}
-                  </a>
-                  <a href={clinic.emailHref} className="flex items-center gap-3 break-all">
-                    <Mail aria-hidden="true" className="size-4 shrink-0 text-gold-700" />
-                    {clinic.email}
-                  </a>
-                  <p className="flex items-start gap-3">
-                    <Clock aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-700" />
-                    {clinic.weekdayHours}
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <MapPin aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-700" />
-                    {clinic.fullAddress}
-                  </p>
+                <div className="mt-3 grid gap-1">
+                  {mobileNavItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex min-h-12 items-center rounded-2xl bg-[#f8fbfd] px-4 py-3 text-sm font-extrabold text-navy-950 hover:bg-blue-50 active:scale-[0.99] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-navy-800"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
-              </div>
-            </section>
+              </section>
 
-            <div className="my-4 h-px bg-border-soft" />
+              <div className="my-4 h-px bg-border-soft" />
 
-            <section>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-gold-700">
+              <section>
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-navy-800">
+                    Clinic Contact
+                  </p>
+                  <div className="mt-3 grid gap-3 text-sm leading-6 text-slate-600">
+                    <a
+                      href={clinic.phoneHref}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex min-h-11 items-center gap-3 rounded-xl font-bold text-navy-950 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-navy-800"
+                    >
+                      <Phone aria-hidden="true" className="size-4 text-navy-800" />
+                      {clinic.phone}
+                    </a>
+                    <a
+                      href={clinic.emergencyHref}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex min-h-11 items-center gap-3 rounded-xl font-bold text-navy-950 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-navy-800"
+                    >
+                      <HeartPulse aria-hidden="true" className="size-4 text-navy-800" />
+                      Emergency: {clinic.emergencyPhone}
+                    </a>
+                    <a href={clinic.emailHref} onClick={() => setIsMobileMenuOpen(false)} className="flex min-h-11 items-center gap-3 break-all rounded-xl focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-navy-800">
+                      <Mail aria-hidden="true" className="size-4 shrink-0 text-navy-800" />
+                      {clinic.email}
+                    </a>
+                    <p className="flex min-h-11 items-start gap-3">
+                      <Clock aria-hidden="true" className="mt-1 size-4 shrink-0 text-navy-800" />
+                      {clinic.weekdayHours}
+                    </p>
+                    <a
+                      href={clinic.directionsHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex min-h-11 items-start gap-3 rounded-xl focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-navy-800"
+                    >
+                      <MapPin aria-hidden="true" className="mt-1 size-4 shrink-0 text-navy-800" />
+                      {clinic.fullAddress}
+                    </a>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <section className="sticky bottom-0 border-t border-border-soft bg-white px-4 py-3 shadow-[0_-12px_28px_rgba(11,31,58,0.08)] sm:px-6">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-navy-800">
                 Quick Actions
               </p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <ButtonLink href={clinic.phoneHref} variant="secondary" className="w-full border-gold-500">
+                <ButtonLink
+                  href={clinic.phoneHref}
+                  variant="secondary"
+                  className="w-full border-navy-800"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   <Phone aria-hidden="true" className="size-4" />
                   Call Now
                 </ButtonLink>
-                <ButtonLink href={clinic.whatsappHref} variant="whatsapp" className="w-full">
+                <ButtonLink
+                  href={clinic.whatsappHref}
+                  variant="whatsapp"
+                  className="w-full"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   <MessageCircle aria-hidden="true" className="size-4" />
                   WhatsApp
                 </ButtonLink>

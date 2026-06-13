@@ -79,7 +79,7 @@ export function WhyChooseUs() {
 
             return (
               <MotionReveal key={reason.title} delay={index * 0.035}>
-                <article className="group h-full rounded-[1.75rem] border border-border-soft bg-[#f8fbfd] p-6 transition duration-300 hover:-translate-y-1 hover:border-gold-500 hover:bg-white hover:shadow-2xl hover:shadow-navy-950/10">
+                <article className="group h-full rounded-[1.75rem] border border-border-soft bg-[#f8fbfd] p-6 transition duration-300 hover:-translate-y-1 hover:border-navy-800 hover:bg-white hover:shadow-2xl hover:shadow-navy-950/10">
                   <div className="flex size-12 items-center justify-center rounded-2xl bg-white text-navy-950 shadow-sm transition group-hover:bg-navy-950 group-hover:text-white">
                     <Icon aria-hidden="true" className="size-5" />
                   </div>
@@ -97,14 +97,14 @@ export function WhyChooseUs() {
 
         <div className="mt-10 rounded-[2rem] bg-navy-950 p-6 text-white sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-gold-500">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-50">
               Not Sure Where to Start?
             </p>
             <p className="mt-2 max-w-2xl text-xl font-extrabold tracking-[-0.03em] sm:text-[1.35rem]">
               Call the dental team and describe your concern before you visit.
             </p>
           </div>
-          <ButtonLink href={clinic.phoneHref} variant="emergency" className="mt-6 w-full sm:mt-0 sm:w-auto">
+          <ButtonLink href={clinic.phoneHref} variant="secondary" className="mt-6 w-full sm:mt-0 sm:w-auto">
             <Phone aria-hidden="true" className="size-4" />
             Call for Guidance
           </ButtonLink>

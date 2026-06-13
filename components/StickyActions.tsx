@@ -9,10 +9,10 @@ export function StickyActions() {
         href="https://sintyz.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 left-6 z-40 hidden items-center gap-3 rounded-full border border-border-soft bg-white/94 px-4 py-3 text-sm font-black text-navy-950 shadow-2xl shadow-navy-950/12 backdrop-blur-xl transition hover:-translate-y-1 hover:border-gold-500 hover:bg-cream-50 lg:flex"
+        className="fixed bottom-6 left-6 z-40 hidden min-h-12 items-center gap-3 rounded-full border border-border-soft bg-white/94 px-4 py-3 text-sm font-black text-navy-950 shadow-2xl shadow-navy-950/12 backdrop-blur-xl transition hover:-translate-y-1 hover:border-navy-800 hover:bg-cream-50 active:translate-y-0 active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-navy-800 lg:flex"
         aria-label="Website by SIntyz.com"
       >
-        <span className="flex size-9 items-center justify-center rounded-full bg-navy-950 text-gold-500">
+        <span className="flex size-9 items-center justify-center rounded-full bg-navy-950 text-white">
           <Rocket aria-hidden="true" className="size-4" />
         </span>
         Website by SIntyz
@@ -24,14 +24,14 @@ export function StickyActions() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open WhatsApp consultation"
-          className="flex size-14 items-center justify-center rounded-full bg-teal-800 text-white shadow-2xl shadow-teal-800/30 transition hover:-translate-y-1 hover:bg-teal-900"
+          className="flex size-14 items-center justify-center rounded-full bg-teal-800 text-white shadow-2xl shadow-teal-800/30 transition hover:-translate-y-1 hover:bg-teal-900 active:translate-y-0 active:scale-[0.96] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-navy-800"
         >
           <MessageCircle aria-hidden="true" className="size-6" />
         </Link>
         <Link
           href={clinic.phoneHref}
           aria-label={`Call ${clinic.name}`}
-          className="flex size-14 items-center justify-center rounded-full bg-gold-500 text-navy-950 shadow-2xl shadow-gold-500/30 transition hover:-translate-y-1 hover:bg-gold-600"
+          className="flex size-14 items-center justify-center rounded-full bg-navy-950 text-white shadow-2xl shadow-navy-950/20 transition hover:-translate-y-1 hover:bg-navy-800 active:translate-y-0 active:scale-[0.96] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-navy-800"
         >
           <Phone aria-hidden="true" className="size-6" />
         </Link>
@@ -47,7 +47,8 @@ export function StickyActions() {
         <div className="grid grid-cols-2 gap-2">
           <Link
             href={clinic.phoneHref}
-            className="flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-gold-700 bg-white text-xs font-black text-gold-700"
+            aria-label={`Call ${clinic.name}`}
+            className="flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-navy-950 bg-white text-xs font-black text-navy-800 transition active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-navy-800"
           >
             <Phone aria-hidden="true" className="size-4" />
             Call Now
@@ -56,7 +57,8 @@ export function StickyActions() {
             href={clinic.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-teal-800 text-xs font-black text-white"
+            aria-label="Open WhatsApp consultation"
+            className="flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-teal-800 text-xs font-black text-white transition active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-navy-800"
           >
             <MessageCircle aria-hidden="true" className="size-4" />
             WhatsApp

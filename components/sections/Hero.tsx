@@ -12,19 +12,25 @@ export function Hero() {
       id="hero"
       className="relative isolate overflow-hidden bg-[linear-gradient(135deg,#ffffff_0%,#eaf4f8_54%,#fdf8ef_100%)] py-12 sm:py-14 lg:py-16"
     >
-      <div className="absolute right-[-10rem] top-[-12rem] -z-10 size-[34rem] rounded-full bg-gold-500/12 blur-3xl" />
+      <div className="absolute right-[-10rem] top-[-12rem] -z-10 size-[34rem] rounded-full bg-navy-950/10 blur-3xl" />
       <div className="absolute bottom-[-16rem] left-[-14rem] -z-10 size-[36rem] rounded-full bg-navy-950/10 blur-3xl" />
 
       <div className="container-premium">
         <div className="grid items-center gap-8 lg:grid-cols-[1.04fr_0.96fr] lg:gap-10">
           <div className="animate-[heroFadeUp_0.7s_ease-out_both]">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border-soft bg-white/84 px-4 py-2 text-sm font-bold text-navy-950 shadow-sm">
-              <MapPin aria-hidden="true" className="size-4 text-gold-700" />
+            <a
+              href={clinic.directionsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get directions to Sri Maatha Multispeciality Dental Hospital"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border-soft bg-white/84 px-4 py-2 text-sm font-bold text-navy-950 shadow-sm transition hover:border-navy-800 hover:bg-cream-50 active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-navy-800"
+            >
+              <MapPin aria-hidden="true" className="size-4 text-navy-800" />
               Doctor Street, Karimnagar
-            </div>
+            </a>
 
-            <h1 className="mt-5 text-balance text-2xl font-semibold leading-[1.4] tracking-[-0.04em] text-navy-950 sm:text-[2rem] sm:leading-[1.18] lg:text-[2.5rem] lg:leading-[1.08] xl:text-[2.8rem]">
-              Dental Care in Karimnagar, Explained Clearly Before Treatment
+            <h1 className="mt-5 text-balance text-2xl font-bold leading-[1.4] tracking-[-0.04em] text-navy-950 sm:text-[2rem] sm:leading-[1.18] lg:text-[2.5rem] lg:leading-[1.08] xl:text-[2.8rem]">
+              Advanced Dental Care for Every Smile in Karimnagar
             </h1>
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
@@ -91,7 +97,7 @@ export function Hero() {
               />
               <div className="pointer-events-none absolute inset-x-2 bottom-2 rounded-b-[1.5rem] bg-gradient-to-t from-navy-950/88 via-navy-950/42 to-transparent px-5 pb-5 pt-20 text-white sm:inset-x-3 sm:bottom-3">
                 <div className="max-w-[82%]">
-                  <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gold-500 sm:text-xs">
+                  <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-white sm:text-xs">
                     {clinic.doctorRole}
                   </p>
                   <p className="mt-1 text-sm font-semibold leading-tight sm:text-base">

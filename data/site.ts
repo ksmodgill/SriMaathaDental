@@ -41,9 +41,7 @@ export const clinic = {
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=Sri%20Maatha%20Multispeciality%20Dental%20Hospital%2C%20Kubra%20Apartment%2C%20Doctor%20Street%2C%20Azmath%20Pura%2C%20Karimnagar%2C%20Telangana%20505001",
   directionsHref:
-    "https://www.google.com/maps/dir/?api=1&destination=Sri%20Maatha%20Multispeciality%20Dental%20Hospital%2C%20Kubra%20Apartment%2C%20Doctor%20Street%2C%20Azmath%20Pura%2C%20Karimnagar%2C%20Telangana%20505001",
-  mapEmbedSrc:
-    "https://www.google.com/maps?q=Sri%20Maatha%20Multispeciality%20Dental%20Hospital%2C%20Kubra%20Apartment%2C%20Doctor%20Street%2C%20Azmath%20Pura%2C%20Karimnagar%2C%20Telangana%20505001&output=embed",
+    "https://www.google.com/maps/dir/?api=1&destination=Sri%20Maatha%20Multispeciality%20Dental%20Hospital",
   email: "srimaathadentalhospital@gmail.com",
   emailHref: "mailto:srimaathadentalhospital@gmail.com",
   established: "2021",

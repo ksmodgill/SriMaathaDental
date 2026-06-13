@@ -20,12 +20,12 @@ export function FeaturedTreatments() {
 
             return (
               <MotionReveal key={treatment.title} delay={index * 0.045}>
-                <article className="group flex h-full flex-col rounded-[2rem] border border-border-soft bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold-500 hover:shadow-2xl hover:shadow-navy-950/10">
+                <article className="group flex h-full flex-col rounded-[2rem] border border-border-soft bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-2xl hover:shadow-navy-950/10">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex size-14 items-center justify-center rounded-2xl bg-blue-50 text-navy-950 transition group-hover:bg-navy-950 group-hover:text-white">
                       <Icon aria-hidden="true" className="size-6" />
                     </div>
-                    <span className="rounded-full bg-cream-50 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.16em] text-gold-700">
+                    <span className="rounded-full bg-cream-50 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.16em] text-navy-800">
                       Patient Concern
                     </span>
                   </div>

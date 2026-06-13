@@ -52,12 +52,12 @@ export function PatientJourney() {
 
             return (
               <MotionReveal key={step.title} delay={index * 0.05}>
-                <article className="group relative h-full rounded-[1.75rem] border border-border-soft bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold-500 hover:shadow-2xl hover:shadow-navy-950/10">
+                <article className="group relative h-full rounded-[1.75rem] border border-border-soft bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-2xl hover:shadow-navy-950/10">
                   <div className="flex items-center gap-4">
-                    <span className="relative z-10 flex size-14 items-center justify-center rounded-2xl bg-navy-950 text-white shadow-lg shadow-navy-950/15 transition group-hover:bg-gold-500 group-hover:text-navy-950">
+                    <span className="relative z-10 flex size-14 items-center justify-center rounded-2xl bg-navy-950 text-white shadow-lg shadow-navy-950/15 transition group-hover:bg-navy-800 group-hover:text-white">
                       <Icon aria-hidden="true" className="size-6" />
                     </span>
-                    <span className="text-sm font-black uppercase tracking-[0.18em] text-gold-700">
+                    <span className="text-sm font-black uppercase tracking-[0.18em] text-navy-800">
                       Step {index + 1}
                     </span>
                   </div>

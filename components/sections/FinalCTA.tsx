@@ -17,10 +17,10 @@ export function FinalCTA() {
         <div className="grid gap-7 lg:grid-cols-[1fr_0.78fr] lg:items-center">
           <MotionReveal>
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-gold-500">
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-blue-50">
                 Ready to Speak to the Team?
               </p>
-              <h2 className="mt-3 text-balance text-2xl font-semibold tracking-[-0.045em] sm:text-3xl lg:text-[2.5rem] lg:leading-tight">
+              <h2 className="mt-3 text-balance text-2xl font-bold tracking-[-0.045em] sm:text-3xl lg:text-[2.5rem] lg:leading-tight">
                 Get Clear Dental Guidance Before You Decide
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-white/86 sm:text-lg">
@@ -30,11 +30,11 @@ export function FinalCTA() {
               </p>
 
               <div className="mt-6 grid gap-3 sm:flex sm:flex-wrap">
-                <ButtonLink href={clinic.phoneHref} variant="emergency" className="w-full sm:w-auto">
+                <ButtonLink href={clinic.phoneHref} variant="secondary" className="w-full sm:w-auto">
                   <Phone aria-hidden="true" className="size-4" />
                   Call for Dental Guidance
                 </ButtonLink>
-                <ButtonLink href={clinic.whatsappHref} variant="whatsapp" className="w-full sm:w-auto">
+                <ButtonLink href={clinic.whatsappHref} variant="secondary" className="w-full sm:w-auto">
                   <MessageCircle aria-hidden="true" className="size-4" />
                   WhatsApp Your Concern
                 </ButtonLink>
@@ -79,7 +79,7 @@ export function FinalCTA() {
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <ButtonLink href={clinic.phoneHref} variant="emergency" className="w-full">
                   <Phone aria-hidden="true" className="size-4" />
-                  Call the Clinic
+                  Call Now
                 </ButtonLink>
                 <ButtonLink href={clinic.whatsappHref} variant="whatsapp" className="w-full">
                   <MessageCircle aria-hidden="true" className="size-4" />

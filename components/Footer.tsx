@@ -52,41 +52,48 @@ export function Footer() {
               emergency dental support.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href={clinic.phoneHref} variant="emergency" className="px-5">
+              <ButtonLink href={clinic.phoneHref} variant="secondary" className="px-5">
                 Call Now
               </ButtonLink>
-              <ButtonLink href={clinic.whatsappHref} variant="whatsapp" className="px-5">
+              <ButtonLink href={clinic.whatsappHref} variant="secondary" className="px-5">
                 WhatsApp
               </ButtonLink>
             </div>
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-500">
+            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-50">
               Contact
             </h2>
             <ul className="mt-5 space-y-4 text-sm text-white/84">
               <li className="flex gap-3">
-                <Phone aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-500" />
-                <a href={clinic.phoneHref} className="hover:text-white">
+                <Phone aria-hidden="true" className="mt-1 size-4 shrink-0 text-blue-50" />
+                <a href={clinic.phoneHref} className="inline-flex min-h-11 items-center rounded-lg hover:text-white focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-blue-50">
                   {clinic.phone}
                 </a>
               </li>
               <li className="flex gap-3">
-                <Phone aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-500" />
-                <a href={clinic.emergencyHref} className="hover:text-white">
+                <Phone aria-hidden="true" className="mt-1 size-4 shrink-0 text-blue-50" />
+                <a href={clinic.emergencyHref} className="inline-flex min-h-11 items-center rounded-lg hover:text-white focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-blue-50">
                   Emergency: {clinic.emergencyPhone}
                 </a>
               </li>
               <li className="flex gap-3">
-                <Mail aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-500" />
-                <a href={clinic.emailHref} className="break-all hover:text-white">
+                <Mail aria-hidden="true" className="mt-1 size-4 shrink-0 text-blue-50" />
+                <a href={clinic.emailHref} className="inline-flex min-h-11 items-center break-all rounded-lg hover:text-white focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-blue-50">
                   {clinic.email}
                 </a>
               </li>
               <li className="flex gap-3">
-                <MapPin aria-hidden="true" className="mt-1 size-4 shrink-0 text-gold-500" />
-                <span>{clinic.fullAddress}</span>
+                <MapPin aria-hidden="true" className="mt-1 size-4 shrink-0 text-blue-50" />
+                <a
+                  href={clinic.directionsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center rounded-lg hover:text-white focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-blue-50"
+                >
+                  {clinic.fullAddress}
+                </a>
               </li>
             </ul>
             <div className="mt-6 flex gap-3" aria-label="Clinic quick links">
@@ -101,7 +108,7 @@ export function Footer() {
                     target={external ? "_blank" : undefined}
                     rel={external ? "noopener noreferrer" : undefined}
                     aria-label={item.label}
-                    className="flex size-10 items-center justify-center rounded-full border border-white/12 bg-white/8 text-white/82 transition hover:-translate-y-0.5 hover:border-gold-500 hover:bg-white/12 hover:text-white focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-gold-500"
+                    className="flex size-11 items-center justify-center rounded-full border border-white/12 bg-white/8 text-white/82 transition hover:-translate-y-0.5 hover:border-blue-50 hover:bg-white/12 hover:text-white active:translate-y-0 active:scale-[0.96] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-blue-50"
                   >
                     <Icon aria-hidden="true" className="size-4" />
                   </a>
@@ -112,13 +119,13 @@ export function Footer() {
 
           <div className="grid gap-8 sm:grid-cols-2 lg:block">
             <div>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-500">
+              <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-50">
                 Quick Links
               </h2>
               <ul className="mt-5 grid grid-cols-2 gap-3 text-sm text-white/84 sm:block sm:space-y-3">
                 {navItems.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="hover:text-white">
+                    <Link href={item.href} className="inline-flex min-h-11 min-w-11 items-center rounded-lg hover:text-white focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-blue-50">
                       {item.label}
                     </Link>
                   </li>
@@ -126,7 +133,9 @@ export function Footer() {
               </ul>
             </div>
 
-            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-500">
+            <div className="my-6 h-px bg-white/12 sm:hidden lg:block" />
+
+            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-50">
               Business Hours
             </h2>
             <div className="mt-5 rounded-2xl border border-white/12 bg-white/8 p-4 text-sm leading-7 text-white/86">
@@ -153,7 +162,7 @@ export function Footer() {
             href="https://sintyz.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-fit items-center rounded-full border border-gold-500/40 bg-white/10 px-4 py-2 text-sm font-black text-white transition hover:border-gold-500 hover:bg-gold-500 hover:text-navy-950"
+            className="inline-flex min-h-11 w-fit items-center rounded-full border border-border-soft bg-white px-4 py-2 text-sm font-black text-navy-950 transition hover:bg-blue-50 active:scale-[0.98] focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-blue-50"
           >
             Designed and Developed by SIntyz.com
           </a>

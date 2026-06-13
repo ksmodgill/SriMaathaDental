@@ -25,14 +25,14 @@ export function TrustMetrics() {
 
             return (
               <MotionReveal key={metric.label} delay={index * 0.04}>
-                <article className="group h-full rounded-[1.75rem] border border-border-soft bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold-500 hover:shadow-2xl hover:shadow-navy-950/10">
+                <article className="group h-full rounded-[1.75rem] border border-border-soft bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-navy-800 hover:shadow-2xl hover:shadow-navy-950/10">
                   <div className="mb-6 flex size-12 items-center justify-center rounded-2xl bg-blue-50 text-navy-950 transition group-hover:bg-navy-950 group-hover:text-white">
                     <Icon aria-hidden="true" className="size-5" />
                   </div>
-                  <p className="text-3xl font-black tracking-[-0.05em] text-navy-950 sm:text-[2rem]">
+                  <p className="text-3xl font-semibold tracking-[-0.05em] text-navy-950 sm:text-[2rem]">
                     {metric.value}
                   </p>
-                  <h3 className="mt-2 text-lg font-semibold text-navy-950">
+                  <h3 className="mt-2 text-lg font-bold text-navy-950">
                     {metric.label}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">
